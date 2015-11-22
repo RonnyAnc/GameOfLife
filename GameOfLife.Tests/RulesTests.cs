@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace GameOfLife.Tests
 {
@@ -11,5 +12,15 @@ namespace GameOfLife.Tests
 		//   - Get a dead cell when the given one has more than 3 neighbors	 
 		//   - Get a dead cell when the given one has less than 2 neighbors	 
 
+		[Test]
+		public void when_a_cell_has_two_neighbors_it_should_mantain_its_state()
+		{
+			var aliveCell = new Cell(2);
+
+			var rule = new ACellMantainsItsStateWhenHasTwoNeighborsRule();
+			var resultingCell = rule.GetResultingCellFrom(aliveCell);
+
+			aliveCell.Should().Be(resultingCell);
+		}
 	}
 }

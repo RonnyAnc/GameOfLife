@@ -44,5 +44,16 @@ namespace GameOfLife.Tests
 
 			nextState.Should().Be(Dead);
 		}
+
+		[Test]
+		public void get_dead_state_when_cell_has_1_neighbor()
+		{
+			var aliveCell = new Cell(1);
+
+			var rule = new ACellDeadWhenHasMoreOneNeighbor();
+			var nextState = rule.NextStateFor(aliveCell);
+
+			nextState.Should().Be(Dead);
+		}
 	}
 }

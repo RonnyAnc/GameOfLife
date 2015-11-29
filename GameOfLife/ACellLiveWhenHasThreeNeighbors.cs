@@ -3,8 +3,10 @@ namespace GameOfLife
 	public class ACellLiveWhenHasThreeNeighbors
 	{
 		public CellState NextStateFor(Cell cell)
-		{
-			return CellState.Alive;
+		{				 
+			if (cell.AliveNeighborsAmount == 3)
+				return CellState.Alive;
+			return CellState.Dead;
 		}
 	}
 }

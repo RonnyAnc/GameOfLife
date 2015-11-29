@@ -37,7 +37,7 @@ namespace GameOfLife.Tests
 		[Test]
 		public void get_dead_state_when_cell_has_more_than_3_neighbors()
 		{
-			var aliveCell = new Cell(3);
+			var aliveCell = new Cell(5);
 
 			var rule = new ACellDeadWhenHasMoreThanThreeNeighbors();
 			var nextState = rule.NextStateFor(aliveCell);

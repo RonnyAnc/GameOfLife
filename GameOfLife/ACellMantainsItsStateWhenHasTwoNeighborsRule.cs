@@ -2,9 +2,9 @@ namespace GameOfLife
 {
 	public class ACellMantainsItsStateWhenHasTwoNeighborsRule
 	{
-		public Cell GetResultingCellFrom(Cell cell)
+		public CellState NextStateFor(Cell cell)
 		{
-			return cell;
+			return cell.State;
 		}
 	}
 }

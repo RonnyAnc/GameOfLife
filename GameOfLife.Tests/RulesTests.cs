@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
+using static GameOfLife.CellState;
 
 namespace GameOfLife.Tests
 {
@@ -18,9 +19,9 @@ namespace GameOfLife.Tests
 			var aliveCell = new Cell(2);
 
 			var rule = new ACellMantainsItsStateWhenHasTwoNeighborsRule();
-			var resultingCell = rule.GetResultingCellFrom(aliveCell);
+			var nextState = rule.NextStateFor(aliveCell);
 
-			aliveCell.Should().Be(resultingCell);
+			nextState.Should().Be(Alive);
 		}
 	}
 }

@@ -2,7 +2,12 @@
 
 namespace GameOfLife
 {
-	public class ACellDeadWhenHasMoreThanThreeNeighbors
+	public interface Rule
+	{
+		CellState NextStateFor(Cell cell);
+	}
+
+	public class ACellDeadWhenHasMoreThanThreeNeighbors : Rule
 	{
 		public CellState NextStateFor(Cell cell)
 		{

@@ -1,6 +1,6 @@
 namespace GameOfLife
 {
-	public class ACellMantainsItsStateWhenHasTwoNeighborsRule
+	public class ACellMantainsItsStateWhenHasTwoNeighborsRule : Rule
 	{
 		public CellState NextStateFor(Cell cell)
 		{

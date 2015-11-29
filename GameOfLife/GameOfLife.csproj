@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACellDeadWhenHasMoreThanThreeNeighbors.cs" />
     <Compile Include="ACellLiveWhenHasThreeNeighbors.cs" />
     <Compile Include="ACellMantainsItsStateWhenHasTwoNeighborsRule.cs" />
     <Compile Include="Cell.cs" />

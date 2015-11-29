@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using GameOfLife.rules;
 using NUnit.Framework;
 using static GameOfLife.CellState;
 
@@ -22,7 +23,7 @@ namespace GameOfLife.Tests
 
 			nextState.Should().Be(Alive);
 		}
-
+			   
 		[Test]
 		public void get_alive_state_when_cell_has_3_neighbors()
 		{

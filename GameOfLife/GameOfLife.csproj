@@ -40,13 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACellDeadWhenHasMoreOneNeighbor.cs" />
-    <Compile Include="ACellDeadWhenHasMoreThanThreeNeighbors.cs" />
-    <Compile Include="ACellLiveWhenHasThreeNeighbors.cs" />
-    <Compile Include="ACellMantainsItsStateWhenHasTwoNeighborsRule.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="CellState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rules\ACellDeadWhenHasMoreOneNeighbor.cs" />
+    <Compile Include="rules\ACellDeadWhenHasMoreThanThreeNeighbors.cs" />
+    <Compile Include="rules\ACellLiveWhenHasThreeNeighbors.cs" />
+    <Compile Include="rules\ACellMantainsItsStateWhenHasTwoNeighborsRule.cs" />
+    <Compile Include="rules\Rule.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,13 +1,11 @@
-using static GameOfLife.CellState;
-
-namespace GameOfLife
+namespace GameOfLife.rules
 {
 	public class ACellLiveWhenHasThreeNeighbors : Rule
 	{
 		public CellState NextStateFor(Cell cell)
 		{				 
 			if (cell.AliveNeighborsAmount == 3)
-				return Alive;
+				return CellState.Alive;
 			return cell.State;
 		}
 	}

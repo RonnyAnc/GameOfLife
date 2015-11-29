@@ -1,4 +1,4 @@
-﻿namespace GameOfLife
+﻿namespace GameOfLife.rules
 {
 	public class ACellDeadWhenHasMoreOneNeighbor : Rule
 	{

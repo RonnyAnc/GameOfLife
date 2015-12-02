@@ -1,6 +1,6 @@
 ﻿namespace GameOfLife.rules
 {
-	public class ACellDeadWhenHasMoreOneNeighbor : Rule
+	public class ACellDeadWhenHasOneNeighbor : Rule
 	{
 		public CellState NextStateFor(Cell cell)
 		{

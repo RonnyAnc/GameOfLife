@@ -43,6 +43,7 @@
     <Compile Include="Cell.cs" />
     <Compile Include="CellState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuleEngine.cs" />
     <Compile Include="rules\ACellDeadWhenHasOneNeighbor.cs" />
     <Compile Include="rules\ACellDeadWhenHasMoreThanThreeNeighbors.cs" />
     <Compile Include="rules\ACellLiveWhenHasThreeNeighbors.cs" />

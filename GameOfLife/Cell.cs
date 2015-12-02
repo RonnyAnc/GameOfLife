@@ -1,16 +1,25 @@
+using System.Collections.Generic;
 using static GameOfLife.CellState;
 
 namespace GameOfLife
 {
 	public class Cell
 	{
-		public int AliveNeighborsAmount { get; }
+		public string Id { get; }
+		public List<string> NeighborsIds { get; }
 		public CellState State { get; }
+		public int AliveNeighborsAmount { get; private set; }
 
-		public Cell(int aliveNeighborsAmount, CellState state = Alive)
+		public Cell(string id, List<string> neighborsIds, CellState state = Alive)
 		{
-			AliveNeighborsAmount = aliveNeighborsAmount;
+			this.Id = id;
+			NeighborsIds = neighborsIds;
 			State = state;
+		}
+
+		public void Configure(int numberOfAliveNeighbors)
+		{
+			AliveNeighborsAmount = numberOfAliveNeighbors;
 		}
 	}
 }

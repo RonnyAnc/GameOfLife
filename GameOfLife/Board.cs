@@ -14,10 +14,7 @@ namespace GameOfLife
 
 		public void PrepareForNextState()
 		{
-			foreach (var cell in cells)
-			{
-				ConfigureCell(cell);
-			}
+			cells.ToList().ForEach(ConfigureCell);
 		}
 
 		private void ConfigureCell(Cell cell)

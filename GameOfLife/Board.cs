@@ -16,15 +16,7 @@ namespace GameOfLife
 		{
 			foreach (var cell in cells)
 			{
-				var aliveNeighbors = 0;
-				foreach (var neighborsId in cell.NeighborsIds)
-				{
-					var neighbour = GetCellById(neighborsId);
-					if (neighbour.IsAlive())
-					{
-						aliveNeighbors += 1;
-					}
-				}
+				var aliveNeighbors = cell.NeighborsIds.Count(id => GetCellById(id).IsAlive());
 				cell.Configure(aliveNeighbors);
 			}
 		}

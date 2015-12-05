@@ -16,9 +16,19 @@ namespace GameOfLife
 		{
 			foreach (var cell in cells)
 			{
-				var aliveNeighbors = cell.NeighborsIds.Count(id => GetCellById(id).IsAlive());
-				cell.Configure(aliveNeighbors);
+				ConfigureCell(cell);
 			}
+		}
+
+		private void ConfigureCell(Cell cell)
+		{
+			var aliveNeighbors = AliveNeighboursAmountFor(cell);
+			cell.Configure(aliveNeighbors);
+		}
+
+		private int AliveNeighboursAmountFor(Cell cell)
+		{
+			return cell.NeighborsIds.Count(id => GetCellById(id).IsAlive());
 		}
 
 		private Cell GetCellById(string cellId)

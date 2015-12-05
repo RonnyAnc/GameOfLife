@@ -21,5 +21,10 @@ namespace GameOfLife
 		{
 			AliveNeighborsAmount = numberOfAliveNeighbors;
 		}
+
+		public bool IsAlive()
+		{
+			return State == CellState.Alive;
+		}
 	}
 }

@@ -20,7 +20,7 @@ namespace GameOfLife
 				foreach (var neighborsId in cell.NeighborsIds)
 				{
 					var neighbour = GetCellById(neighborsId);
-					if (neighbour.State == CellState.Alive)
+					if (neighbour.IsAlive())
 					{
 						aliveNeighbors += 1;
 					}

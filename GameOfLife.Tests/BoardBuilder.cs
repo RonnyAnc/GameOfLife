@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using GameOfLife.rules;
 
 namespace GameOfLife.Tests
 {
@@ -14,13 +15,20 @@ namespace GameOfLife.Tests
 
 		public Board Build()
 		{
-			return new Board(cells);
+			return new Board(new NoRuleEngine(), cells);
 		}
 
 		public BoardBuilder WithCells(params Cell[] cells)
 		{
 			this.cells = cells.ToList();
 			return this;
+		}
+	}
+
+	public class NoRuleEngine : RuleEngine
+	{
+		public NoRuleEngine() : base(new List<Rule>())
+		{
 		}
 	}
 }

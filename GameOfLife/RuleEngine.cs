@@ -12,7 +12,7 @@ namespace GameOfLife
 			this.ruleSet = ruleSet;
 		}
 
-		public CellState ApplyRulesTo(Cell cell)
+		public virtual CellState ApplyRulesTo(Cell cell)
 		{
 			var cellState = cell.State;
 			foreach (var rule in ruleSet)

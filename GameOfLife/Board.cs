@@ -5,10 +5,12 @@ namespace GameOfLife
 {
 	public class Board
 	{
+		private readonly RuleEngine ruleEngine;
 		private readonly IEnumerable<Cell> cells;
 
-		public Board(IEnumerable<Cell> cells)
+		public Board(RuleEngine ruleEngine, IEnumerable<Cell> cells)
 		{
+			this.ruleEngine = ruleEngine;
 			this.cells = cells;
 		}
 
@@ -31,6 +33,11 @@ namespace GameOfLife
 		private Cell GetCellById(string cellId)
 		{
 			return cells.First(c => c.Id == cellId);
+		}
+
+		public void NextGeneration()
+		{
+			cells.ToList().ForEach(c => ruleEngine.ApplyRulesTo(c));
 		}
 	}
 }

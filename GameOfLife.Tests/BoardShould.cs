@@ -2,6 +2,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
+using static GameOfLife.CellState;
 
 namespace GameOfLife.Tests
 {
@@ -11,14 +12,16 @@ namespace GameOfLife.Tests
 		[Test]
 		public void calculate_number_of_alive_neighbours_for_a_cell()
 		{
-			var firstCell = new Cell("1", new List<string> {"2", "3"});
+			var firstCell = new Cell("1", new List<string> {"2", "3", "4"});
 			var secondCell = new Cell("2", new List<string> {"1"});
 			var thirdCell = new Cell("3", new List<string> {"1"});
+			var deadCell = new Cell("4", new List<string> {"1"}, Dead);
 			var cells = new List<Cell>
 			{
 				firstCell,
 				secondCell,
-				thirdCell
+				thirdCell,
+				deadCell
 			};
 			var board = new Board(cells);
 

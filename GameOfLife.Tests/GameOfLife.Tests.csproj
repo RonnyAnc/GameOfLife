@@ -64,7 +64,9 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="BoardBuilder.cs" />
     <Compile Include="BoardShould.cs" />
+    <Compile Include="CellBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RuleEngineShould.cs" />
   </ItemGroup>

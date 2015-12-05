@@ -11,37 +11,22 @@ namespace GameOfLife.Tests
 		[Test]
 		public void calculate_number_of_alive_neighbours_for_a_cell()
 		{
-			var aCell = new Cell("1", new List<string> {"2"});
-			var anotherCell = new Cell("2", new List<string> {"1"});
+			var firstCell = new Cell("1", new List<string> {"2", "3"});
+			var secondCell = new Cell("2", new List<string> {"1"});
+			var thirdCell = new Cell("3", new List<string> {"1"});
 			var cells = new List<Cell>
 			{
-				aCell,
-				anotherCell
+				firstCell,
+				secondCell,
+				thirdCell
 			};
 			var board = new Board(cells);
 
 			board.PrepareForNextState();
 
-			aCell.AliveNeighborsAmount.Should().Be(1);
-			anotherCell.AliveNeighborsAmount.Should().Be(1);
+			firstCell.AliveNeighborsAmount.Should().Be(2);
+			secondCell.AliveNeighborsAmount.Should().Be(1);
+			thirdCell.AliveNeighborsAmount.Should().Be(1);
 		}	 
-	}
-
-	public class Board
-	{
-		private readonly IEnumerable<Cell> cells;
-
-		public Board(IEnumerable<Cell> cells)
-		{
-			this.cells = cells;
-		}
-
-		public void PrepareForNextState()
-		{
-			foreach (var cell in cells)
-			{
-				cell.Configure(1);
-			}
-		}
 	}
 }

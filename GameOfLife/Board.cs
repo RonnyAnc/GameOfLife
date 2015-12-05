@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GameOfLife
 {
@@ -15,8 +16,22 @@ namespace GameOfLife
 		{
 			foreach (var cell in cells)
 			{
-				cell.Configure(1);
+				var aliveNeighbors = 0;
+				foreach (var neighborsId in cell.NeighborsIds)
+				{
+					var neighbour = GetCellById(neighborsId);
+					if (neighbour.State == CellState.Alive)
+					{
+						aliveNeighbors += 1;
+					}
+				}
+				cell.Configure(aliveNeighbors);
 			}
+		}
+
+		private Cell GetCellById(string cellId)
+		{
+			return cells.First(c => c.Id == cellId);
 		}
 	}
 }

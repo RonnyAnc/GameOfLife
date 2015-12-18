@@ -68,6 +68,7 @@
     <Compile Include="BoardShould.cs" />
     <Compile Include="CellBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationshipsShould.cs" />
     <Compile Include="RuleEngineShould.cs" />
   </ItemGroup>
   <ItemGroup>

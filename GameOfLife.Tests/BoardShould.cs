@@ -3,7 +3,6 @@ using FluentAssertions;
 using GameOfLife.rules;
 using NSubstitute;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
 using static GameOfLife.CellState;
 
 namespace GameOfLife.Tests
